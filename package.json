@@ -1,6 +1,6 @@
 {
   "name": "metal-ssg-components",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Components that are compatible with metal-ssg sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
@@ -10,7 +10,9 @@
     "test"
   ],
   "scripts": {
-    "test": "test"
+    "compile": "babel --presets metal -d lib/ src/",
+    "prepublish": "gulp soy && npm run compile",
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -22,11 +24,6 @@
     "metal",
     "soy"
   ],
-  "scripts": {
-    "compile": "babel --presets metal -d lib/ src/",
-    "prepublish": "gulp soy && npm run compile",
-    "test": "gulp test"
-  },
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
