@@ -4,12 +4,10 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 import Toggler from 'metal-toggler';
 
-import templates from './Sidebar.soy';
+import templates from './SSGSidebar.soy';
 
-class Sidebar extends Component {
+class SSGSidebar extends Component {
 	attached() {
-		console.log('Sidebar attached.');
-
 		new Toggler({
 			content: '.sidebar-list-1',
 			header: '.sidebar-header'
@@ -17,6 +15,6 @@ class Sidebar extends Component {
 	}
 };
 
-Soy.register(Sidebar, templates);
+Soy.register(SSGSidebar, templates);
 
-export default Sidebar;
+export default SSGSidebar;

@@ -1,4 +1,4 @@
-{namespace Navigation}
+{namespace SSGNavigation}
 
 /**
  * @param section
@@ -21,12 +21,12 @@
 			{foreach $page in $section.children}
 				{if not $page.hidden}
 					<li class="{$listItemClasses ?: ''}{$page.active ? ' ' + $localListItemActiveClasses : ''}">
-						{delcall Navigation.anchor variant="$localAnchorVariant" data="all"}
+						{delcall SSGNavigation.anchor variant="$localAnchorVariant" data="all"}
 							{param page: $page /}
 						{/delcall}
 
 						{if not $depth or $localCurrentDepth + 1 < $depth}
-							{call Navigation.render}
+							{call SSGNavigation.render}
 								{param currentDepth: $localCurrentDepth + 1 /}
 								{param currentURL: $currentURL /}
 								{param depth: $depth /}
@@ -48,7 +48,7 @@
  * @param page
  * @param? linkClasses
  */
-{deltemplate Navigation.anchor variant="'basic'"}
+{deltemplate SSGNavigation.anchor variant="'basic'"}
 	{if $page.url}
 		<a class="{$linkClasses ?: ''}" href="{$page.url}">
 			<span>{$page.title ?: 'Missing'}</span>

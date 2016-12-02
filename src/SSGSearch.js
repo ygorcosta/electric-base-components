@@ -3,10 +3,10 @@
 import core from 'metal';
 import Soy from 'metal-soy';
 
-import SearchBase from './SearchBase';
-import templates from './Search.soy';
+import SSGSearchBase from './SSGSearchBase';
+import templates from './SSGSearch.soy';
 
-class Search extends SearchBase {
+class SSGSearch extends SSGSearchBase {
 	attached() {
 		SearchBase.prototype.attached.apply(this);
 
@@ -25,6 +25,6 @@ class Search extends SearchBase {
 	}
 };
 
-Soy.register(Search, templates);
+Soy.register(SSGSearch, templates);
 
-export default Search;
+export default SSGSearch;
