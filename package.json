@@ -1,0 +1,28 @@
+{
+  "name": "metal-ssg-components",
+  "version": "0.0.0",
+  "description": "Components that are compatible with metal-ssg sites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Robert-Frampton/metal-ssg-components"
+  },
+  "keywords": [
+    "metal-ssg",
+    "components",
+    "metal",
+    "soy"
+  ],
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robert-Frampton/metal-ssg-components/issues"
+  },
+  "homepage": "https://github.com/Robert-Frampton/metal-ssg-components",
+  "devDependencies": {
+    "metal-ssg": "0.0.7"
+  }
+}
