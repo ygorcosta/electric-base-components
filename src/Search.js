@@ -3,7 +3,7 @@
 import core from 'metal';
 import Soy from 'metal-soy';
 
-import SearchBase from '../SearchBase/SearchBase';
+import SearchBase from './SearchBase';
 import templates from './Search.soy';
 
 class Search extends SearchBase {
