@@ -4,6 +4,11 @@
   "description": "Components that are compatible with metal-ssg sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
   "scripts": {
     "test": "test"
   },
