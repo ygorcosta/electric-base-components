@@ -1,7 +1,7 @@
 'use strict';
 
 import SSGNavigation from '../SSGNavigation';
-import SSGReadingProgess from '../SSGReadingProgess';
+import SSGReadingProgress from '../SSGReadingProgress';
 import SSGSearch from '../SSGSearch';
 import SSGSearchAutocomplete from '../SSGSearchAutocomplete';
 import SSGSearchBase from '../SSGSearchBase';
@@ -10,7 +10,7 @@ import SSGUpdates from '../SSGUpdates';
 
 export {
 	SSGNavigation,
-	SSGReadingProgess,
+	SSGReadingProgress,
 	SSGSearch,
 	SSGSearchAutocomplete,
 	SSGSearchBase,
