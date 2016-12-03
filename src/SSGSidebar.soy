@@ -21,7 +21,7 @@
 			{/call}
 		</div>
 
-		{call SSGSearchAutocomplete.render}
+		{call SSGNavigation.render}
 			{param elementClasses: 'sidebar-list sidebar-list-1 toggler-collapsed' /}
 			{param listItemClasses: 'sidebar-item' /}
 			{param anchorVariant: 'sidebar' /}
@@ -33,7 +33,7 @@
 /**
  * @param page
  */
-{deltemplate SSGSearchAutocomplete.anchor variant="'sidebar'"}
+{deltemplate SSGNavigation.anchor variant="'sidebar'"}
 	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
 		<span class="sidebar-icon icon-16-{$page.icon}"></span>
 		<span>{$page.title}</span>
