@@ -18,7 +18,9 @@ class SSGSearchAutocomplete extends SSGSearchBase {
 				data: this.search_.bind(this),
 				format: this.format_.bind(this),
 				inputElement: input,
-				select: () => {}
+				select: ({url}) => {
+					window.location = url;
+				}
 			});
 		}
 	}
@@ -36,7 +38,8 @@ class SSGSearchAutocomplete extends SSGSearchBase {
 					<p class="autocomplete-title">${title}</p>
 					<p class="autocomplete-text">${description}</p>
 				</div>
-			</a>`
+			</a>`,
+			url: url
 		};
 	}
 };
