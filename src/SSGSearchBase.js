@@ -9,14 +9,14 @@ class SSGSearchBase extends Component {
 	}
 
 	filterResults_(data, query) {
-		let {children, description, title} = data;
+		let {children, description, hidden, title} = data;
 
 		let results = [];
 
 		description = description ? description.toLowerCase() : '';
 		title = title ? title.toLowerCase() : '';
 
-		if (title.indexOf(query) > -1 || description.indexOf(query) > -1) {
+		if (!hidden && title.indexOf(query) > -1 || description.indexOf(query) > -1) {
 			results.push(data);
 		}
 
