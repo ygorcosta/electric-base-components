@@ -8,7 +8,7 @@ import templates from './SSGSearch.soy';
 
 class SSGSearch extends SSGSearchBase {
 	attached() {
-		SearchBase.prototype.attached.apply(this);
+		SSGSearchBase.prototype.attached.apply(this);
 
 		const queryString = window.location.search;
 		const queryIndex = queryString.indexOf('q=');
