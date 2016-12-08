@@ -1,6 +1,7 @@
 {namespace SSGUpdates}
 
 /**
+ * @param? featureVariant
  * @param updates
  */
 {template .render}
@@ -12,6 +13,7 @@
 {/template}
 
 /**
+ * @param? featureVariant
  * @param updates
  */
 {template .updates}
@@ -26,7 +28,7 @@
 							</div>
 
 							<div class="col-sm-13 update-features">
-								{call .features}
+								{call .features data="all"}
 									{param features: $update.features /}
 								{/call}
 							</div>
@@ -39,26 +41,38 @@
 {/template}
 
 /**
+ * @param? featureVariant
  * @param features
  */
 {template .features}
+	{let $localFeatureVariant: $featureVariant ?: 'basic' /}
+
 	<div class="row">
 		{foreach $feature in $features}
-			<div class="col-xs-16 col-sm-8 update-feature">
-				<div class="feature-topper">
-					<span class="feature-icon icon-16-{$feature.icon}"></span>
-
-					<h1 class="feature-header">{$feature.title}</h1>
-				</div>
-
-				<div class="feature-content">
-					<p class="feature-lead">{$feature.description}</p>
-
-					<div class="read-more">
-						<a href="{$feature.url}">Read more…</a>
-					</div>
-				</div>
-			</div>
+			{delcall SSGUpdates.feature variant="$localFeatureVariant" data="all"}
+				{param feature: $feature /}
+			{/delcall}
 		{/foreach}
 	</div>
 {/template}
+
+/**
+ * @param feature
+ */
+{deltemplate SSGUpdates.feature variant="'basic'"}
+	<div class="col-xs-16 col-sm-8 update-feature">
+		<div class="feature-topper">
+			<span class="feature-icon icon-16-{$feature.icon}"></span>
+
+			<h1 class="feature-header">{$feature.title}</h1>
+		</div>
+
+		<div class="feature-content">
+			<p class="feature-lead">{$feature.description}</p>
+
+			<div class="read-more">
+				<a href="{$feature.url}">Read more…</a>
+			</div>
+		</div>
+	</div>
+{/deltemplate}
