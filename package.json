@@ -1,6 +1,6 @@
 {
   "name": "metal-ssg-components",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Components that are compatible with metal-ssg sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
