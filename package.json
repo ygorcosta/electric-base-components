@@ -35,7 +35,7 @@
     "babel-preset-metal": "^4.1.0",
     "gulp": "^3.9.1",
     "gulp-metal": "^1.9.13",
-    "electric": "^0.0.7"
+    "electric": "^1.0.0"
   },
   "dependencies": {
     "metal-affix": "^2.0.0",
