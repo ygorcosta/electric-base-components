@@ -7,9 +7,9 @@ import dom from 'metal-dom';
 import ReadingProgress from 'metal-reading-progress';
 import Soy from 'metal-soy';
 
-import templates from './SSGReadingProgress.soy';
+import templates from './ElectricReadingProgress.soy';
 
-class SSGReadingProgress extends Component {
+class ElectricReadingProgress extends Component {
 	attached() {
 		this.renderReadingProgress_();
 	}
@@ -47,7 +47,7 @@ class SSGReadingProgress extends Component {
 	}
 };
 
-SSGReadingProgress.STATE = {
+ElectricReadingProgress.STATE = {
 	articleContainer: {
 		setter: dom.toElement,
 		value: '.docs-guide'
@@ -69,6 +69,6 @@ SSGReadingProgress.STATE = {
 	}
 };
 
-Soy.register(SSGReadingProgress, templates);
+Soy.register(ElectricReadingProgress, templates);
 
-export default SSGReadingProgress;
+export default ElectricReadingProgress;

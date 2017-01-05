@@ -1,19 +1,19 @@
 'use strict';
 
-import SSGNavigation from '../SSGNavigation';
-import SSGReadingProgress from '../SSGReadingProgress';
-import SSGSearch from '../SSGSearch';
-import SSGSearchAutocomplete from '../SSGSearchAutocomplete';
-import SSGSearchBase from '../SSGSearchBase';
-import SSGUpdates from '../SSGUpdates';
+import ElectricNavigation from '../ElectricNavigation';
+import ElectricReadingProgress from '../ElectricReadingProgress';
+import ElectricSearch from '../ElectricSearch';
+import ElectricSearchAutocomplete from '../ElectricSearchAutocomplete';
+import ElectricSearchBase from '../ElectricSearchBase';
+import ElectricUpdates from '../ElectricUpdates';
 
 export {
-	SSGNavigation,
-	SSGReadingProgress,
-	SSGSearch,
-	SSGSearchAutocomplete,
-	SSGSearchBase,
-	SSGUpdates
+	ElectricNavigation,
+	ElectricReadingProgress,
+	ElectricSearch,
+	ElectricSearchAutocomplete,
+	ElectricSearchBase,
+	ElectricUpdates
 };
 
-export default SSGNavigation;
+export default ElectricNavigation;

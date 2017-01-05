@@ -4,20 +4,20 @@ import Component from 'metal-component';
 import core from 'metal';
 import Soy from 'metal-soy';
 
-import templates from './SSGUpdates.soy';
+import templates from './ElectricUpdates.soy';
 
-class SSGUpdates extends Component {
+class ElectricUpdates extends Component {
 	attached() {
 	}
 };
 
-SSGUpdates.STATE = {
+ElectricUpdates.STATE = {
 	updates: {
 		validator: core.isArray,
 		value: []
 	}
 };
 
-Soy.register(SSGUpdates, templates);
+Soy.register(ElectricUpdates, templates);
 
-export default SSGUpdates;
+export default ElectricUpdates;

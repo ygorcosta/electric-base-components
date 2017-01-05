@@ -1,4 +1,4 @@
-{namespace SSGUpdates}
+{namespace ElectricUpdates}
 
 /**
  * @param? featureVariant
@@ -49,7 +49,7 @@
 
 	<div class="row">
 		{foreach $feature in $features}
-			{delcall SSGUpdates.feature variant="$localFeatureVariant" data="all"}
+			{delcall ElectricUpdates.feature variant="$localFeatureVariant" data="all"}
 				{param feature: $feature /}
 			{/delcall}
 		{/foreach}
@@ -59,7 +59,7 @@
 /**
  * @param feature
  */
-{deltemplate SSGUpdates.feature variant="'basic'"}
+{deltemplate ElectricUpdates.feature variant="'basic'"}
 	<div class="col-xs-16 col-sm-8 update-feature">
 		<div class="feature-topper">
 			<span class="feature-icon icon-16-{$feature.icon}"></span>

@@ -1,7 +1,7 @@
 {
-  "name": "metal-ssg-components",
+  "name": "electric-components",
   "version": "0.2.2",
-  "description": "Components that are compatible with metal-ssg sites.",
+  "description": "Components that are compatible with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
   "files": [
@@ -16,26 +16,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Robert-Frampton/metal-ssg-components"
+    "url": "https://github.com/liferay/electric-components"
   },
   "keywords": [
-    "metal-ssg",
     "components",
+    "electric",
     "metal",
     "soy"
   ],
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Robert-Frampton/metal-ssg-components/issues"
+    "url": "https://github.com/liferay/electric-components/issues"
   },
-  "homepage": "https://github.com/Robert-Frampton/metal-ssg-components",
+  "homepage": "http://electricjs.com",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-metal": "^4.1.0",
     "gulp": "^3.9.1",
     "gulp-metal": "^1.9.13",
-    "metal-ssg": "^0.0.7"
+    "electric": "^0.0.7"
   },
   "dependencies": {
     "metal-affix": "^2.0.0",

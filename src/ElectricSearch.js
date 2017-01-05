@@ -3,12 +3,12 @@
 import core from 'metal';
 import Soy from 'metal-soy';
 
-import SSGSearchBase from './SSGSearchBase';
-import templates from './SSGSearch.soy';
+import ElectricSearchBase from './ElectricSearchBase';
+import templates from './ElectricSearch.soy';
 
-class SSGSearch extends SSGSearchBase {
+class ElectricSearch extends ElectricSearchBase {
 	attached() {
-		SSGSearchBase.prototype.attached.apply(this);
+		ElectricSearchBase.prototype.attached.apply(this);
 
 		const queryString = window.location.search;
 		const queryIndex = queryString.indexOf('q=');
@@ -25,6 +25,6 @@ class SSGSearch extends SSGSearchBase {
 	}
 };
 
-Soy.register(SSGSearch, templates);
+Soy.register(ElectricSearch, templates);
 
-export default SSGSearch;
+export default ElectricSearch;

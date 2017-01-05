@@ -4,10 +4,10 @@ import Autocomplete from 'metal-autocomplete';
 import core from 'metal';
 import Soy from 'metal-soy';
 
-import SSGSearchBase from './SSGSearchBase';
-import templates from './SSGSearchAutocomplete.soy';
+import ElectricSearchBase from './ElectricSearchBase';
+import templates from './ElectricSearchAutocomplete.soy';
 
-class SSGSearchAutocomplete extends SSGSearchBase {
+class ElectricSearchAutocomplete extends ElectricSearchBase {
 	attached() {
 		const {element} = this;
 
@@ -44,6 +44,6 @@ class SSGSearchAutocomplete extends SSGSearchBase {
 	}
 };
 
-Soy.register(SSGSearchAutocomplete, templates);
+Soy.register(ElectricSearchAutocomplete, templates);
 
-export default SSGSearchAutocomplete;
+export default ElectricSearchAutocomplete;

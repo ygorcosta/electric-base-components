@@ -3,7 +3,7 @@
 import Component from 'metal-component';
 import core from 'metal';
 
-class SSGSearchBase extends Component {
+class ElectricSearchBase extends Component {
 	attached() {
 		this.on('queryChanged', this.handleQueryChange_.bind(this));
 	}
@@ -50,7 +50,7 @@ class SSGSearchBase extends Component {
 	}
 };
 
-SSGSearchBase.STATE = {
+ElectricSearchBase.STATE = {
 	maxResults: {
 		validator: core.isNumber,
 		value: 4
@@ -71,4 +71,4 @@ SSGSearchBase.STATE = {
 	}
 };
 
-export default SSGSearchBase;
+export default ElectricSearchBase;
