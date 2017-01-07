@@ -1,7 +1,9 @@
 'use strict';
 
+import ajax from 'metal-ajax';
 import Component from 'metal-component';
 import core from 'metal';
+import { CancellablePromise as Promise } from 'metal-promise';
 
 class ElectricSearchBase extends Component {
 	attached() {
@@ -9,14 +11,15 @@ class ElectricSearchBase extends Component {
 	}
 
 	filterResults_(data, query) {
-		let {children, description, hidden, title} = data;
+		let {children, content, description, hidden, title} = data;
 
 		let results = [];
 
+		content = content ? content.toLowerCase() : '';
 		description = description ? description.toLowerCase() : '';
 		title = title ? title.toLowerCase() : '';
 
-		if (!hidden && title.indexOf(query) > -1 || description.indexOf(query) > -1) {
+		if (!hidden && title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1) {
 			results.push(data);
 		}
 
@@ -30,27 +33,56 @@ class ElectricSearchBase extends Component {
 	}
 
 	handleQueryChange_({newVal}) {
-		this.results = this.search_(newVal);
+		const instance = this;
+
+		this.search_(newVal)
+			.then(results => {
+				instance.results = results;
+			});
 	}
 
 	search_(query) {
-		const {maxResults, section} = this;
+		const instance = this;
 
-		let results = [];
+		return Promise.resolve(this.data)
+			.then(data => {
+				if (data) {
+					return data;
+				}
+				else {
+					return ajax.request('/site.json')
+						then(res)
+				}
+			})
+			.then(data => {console.log(data);
+				if (data.response) {
+					data = JSON.parse(data.response).index;
 
-		if (section && query) {
-			results = this.filterResults_(section, query.toLowerCase());
+					instance.data = data;
+				}
 
-			if (results.length > maxResults) {
-				results = results.slice(0, maxResults);
-			}
-		}
+				const {maxResults} = instance;
 
-		return results;
+				let results = [];
+
+				if (data && query) {
+					results = instance.filterResults_(data, query.toLowerCase());
+
+					if (results.length > maxResults) {
+						results = results.slice(0, maxResults);
+					}
+				}
+
+				return results;
+			});
 	}
 };
 
 ElectricSearchBase.STATE = {
+	data: {
+		validator: core.isObject
+	},
+
 	maxResults: {
 		validator: core.isNumber,
 		value: 4
@@ -64,10 +96,6 @@ ElectricSearchBase.STATE = {
 	results: {
 		validator: core.isArray,
 		value: []
-	},
-
-	section: {
-		validator: core.isObject
 	}
 };
 

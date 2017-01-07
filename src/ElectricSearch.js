@@ -25,6 +25,12 @@ class ElectricSearch extends ElectricSearchBase {
 	}
 };
 
+ElectricSearch.STATE = {
+	maxResults: {
+		value: Infinity
+	}
+};
+
 Soy.register(ElectricSearch, templates);
 
 export default ElectricSearch;
