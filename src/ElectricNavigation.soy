@@ -50,8 +50,8 @@
  * @param? linkClasses
  */
 {deltemplate ElectricNavigation.anchor variant="'basic'"}
-	{if $page.url}
-		<a class="{$linkClasses ?: ''}" href="{$page.url}">
+	{if $page.url or $page.redirect}
+		<a class="{$linkClasses ?: ''}" href="{$page.url ?: $page.redirect}">
 			<span>{$page.title ?: 'Missing'}</span>
 		</a>
 	{else}
