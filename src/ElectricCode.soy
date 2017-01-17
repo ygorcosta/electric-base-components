@@ -1,0 +1,17 @@
+{namespace ElectricCode}
+
+/**
+ * @param code
+ * @param mode
+ * @param? copyLabel
+ * @param? elementClasses
+ */
+{template .render}
+	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">
+		<code class="code" data-mode="{$mode}">{$code}</code>
+
+		<a class="copy-to-clipboard" data-onclick="handleCopyClick" href="javascript:;">
+			{$copyLabel ?: 'Copy'}
+		</a>
+	</div>
+{/template}
