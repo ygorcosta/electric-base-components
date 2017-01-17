@@ -41,6 +41,7 @@
     "metal-affix": "^2.0.0",
     "metal-ajax": "^2.0.3",
     "metal-autocomplete": "^2.0.2",
+    "metal-clipboard": "^2.0.0",
     "metal-reading-progress": "^2.0.0",
     "metal-toggler": "^2.0.0"
   }

@@ -8,10 +8,8 @@
  */
 {template .render}
 	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">
-		<code class="code" data-mode="{$mode}">{$code}</code>
+		<a class="copy-to-clipboard" href="javascript:;">{$copyLabel ?: 'Copy'}</a>
 
-		<a class="copy-to-clipboard" data-onclick="handleCopyClick" href="javascript:;">
-			{$copyLabel ?: 'Copy'}
-		</a>
+		<code class="code" data-mode="{$mode}" ref="code">{$code}</code>
 	</div>
 {/template}
