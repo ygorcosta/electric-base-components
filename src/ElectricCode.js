@@ -3,8 +3,6 @@
 import Clipboard from 'metal-clipboard';
 import Component from 'metal-component';
 import Tooltip from 'metal-tooltip';
-import core from 'metal';
-import dom from 'metal-dom';
 import Soy from 'metal-soy';
 
 import templates from './ElectricCode.soy';
@@ -17,16 +15,16 @@ class ElectricCode extends Component {
 			window.electricClipboardTooltip = new Tooltip({
 				delay: [300, 150],
 				elementClasses: 'fade',
-				selector: selector,
-				title: 'Copy',
-				visible: false,
 				events: {
 					visibleChanged: function(event) {
 						if (event.newVal) {
 							this.title = 'Copy';
 						}
 					}
-				}
+				},
+				selector: selector,
+				title: 'Copy',
+				visible: false
 			});
 		}
 
@@ -35,7 +33,7 @@ class ElectricCode extends Component {
 				selector: selector,
 				text: delegateTarget => {
 					window.electricClipboardTooltip.title = 'Copied';
-					return dom.next(delegateTarget, '.code').innerHTML;
+					return delegateTarget.parentNode.querySelector('pre .code').innerText;
 				}
 			});
 		}
