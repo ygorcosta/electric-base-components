@@ -10,16 +10,31 @@ class ElectricSearchBase extends Component {
 		this.on('queryChanged', this.handleQueryChange_.bind(this));
 	}
 
-	filterResults_(data, query) {
-		let {children, content, description, hidden, title} = data;
+	matchesQuery_(data, query) {
+		const {childrenOnly} = this;
+		const {pathname} = location;
 
-		let results = [];
+		let {content, description, hidden, title, url} = data;
+
+		if (childrenOnly && url.indexOf(pathname) !== 0) {
+			return false;
+		}
 
 		content = content ? content.toLowerCase() : '';
 		description = description ? description.toLowerCase() : '';
 		title = title ? title.toLowerCase() : '';
 
-		if (!hidden && title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1) {
+		return !hidden && title.indexOf(query) > -1 ||
+			description.indexOf(query) > -1 ||
+			content.indexOf(query) > -1;
+	}
+
+	filterResults_(data, query) {
+		const {children} = data;
+
+		let results = [];
+
+		if (this.matchesQuery_(data, query)) {
 			results.push(data);
 		}
 
@@ -79,6 +94,11 @@ class ElectricSearchBase extends Component {
 };
 
 ElectricSearchBase.STATE = {
+	childrenOnly: {
+		validator: core.isBoolean,
+		value: true
+	},
+
 	data: {
 		validator: core.isObject
 	},
