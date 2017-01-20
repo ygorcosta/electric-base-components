@@ -69,7 +69,7 @@ class ElectricSearchBase extends Component {
 						then(res)
 				}
 			})
-			.then(data => {console.log(data);
+			.then(data => {
 				if (data.response) {
 					data = JSON.parse(data.response).index;
 
