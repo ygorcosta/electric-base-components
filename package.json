@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liferay/electric-components"
+    "url": "https://github.com/wedeploy/electric-components"
   },
   "keywords": [
     "components",
@@ -27,7 +27,7 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liferay/electric-components/issues"
+    "url": "https://github.com/wedeploy/electric-components/issues"
   },
   "homepage": "http://electricjs.com",
   "devDependencies": {
