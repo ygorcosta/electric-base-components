@@ -12,11 +12,11 @@ class ElectricSearchBase extends Component {
 
 	matchesQuery_(data, query) {
 		const {childrenOnly} = this;
-		const {pathname} = location;
+		const path = this.path || location.pathname;
 
 		let {content, description, hidden, title, url} = data;
 
-		if (childrenOnly && url.indexOf(pathname) !== 0) {
+		if (childrenOnly && url.indexOf(path) !== 0) {
 			return false;
 		}
 
@@ -106,6 +106,11 @@ ElectricSearchBase.STATE = {
 	maxResults: {
 		validator: core.isNumber,
 		value: 4
+	},
+
+	path: {
+		validator: core.isString,
+		value: null
 	},
 
 	query: {
