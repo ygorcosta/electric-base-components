@@ -24,9 +24,9 @@ class ElectricSearchBase extends Component {
 		description = description ? description.toLowerCase() : '';
 		title = title ? title.toLowerCase() : '';
 
-		return !hidden && title.indexOf(query) > -1 ||
+		return !hidden && (title.indexOf(query) > -1 ||
 			description.indexOf(query) > -1 ||
-			content.indexOf(query) > -1;
+			content.indexOf(query) > -1);
 	}
 
 	filterResults_(data, query) {
