@@ -1,6 +1,6 @@
 {
   "name": "electric-components",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Components that are compatible with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
