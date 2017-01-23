@@ -16,7 +16,7 @@ class ElectricSearchBase extends Component {
 
 		let {content, description, hidden, title, url} = data;
 
-		if (childrenOnly && url.indexOf(path) !== 0) {
+		if (childrenOnly && url.indexOf(path) !== 0 && url !== path) {
 			return false;
 		}
 
