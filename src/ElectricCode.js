@@ -3,9 +3,6 @@
 import Clipboard from 'metal-clipboard';
 import Component from 'metal-component';
 import Tooltip from 'metal-tooltip';
-import Soy from 'metal-soy';
-
-import templates from './ElectricCode.soy';
 
 class ElectricCode extends Component {
 	attached() {
@@ -39,7 +36,5 @@ class ElectricCode extends Component {
 		}
 	}
 };
-
-Soy.register(ElectricCode, templates);
 
 export default ElectricCode;

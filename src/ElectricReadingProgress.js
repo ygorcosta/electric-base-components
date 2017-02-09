@@ -5,9 +5,6 @@ import Component from 'metal-component';
 import core from 'metal';
 import dom from 'metal-dom';
 import ReadingProgress from 'metal-reading-progress';
-import Soy from 'metal-soy';
-
-import templates from './ElectricReadingProgress.soy';
 
 class ElectricReadingProgress extends Component {
 	attached() {
@@ -68,7 +65,5 @@ ElectricReadingProgress.STATE = {
 		value: 'h2'
 	}
 };
-
-Soy.register(ElectricReadingProgress, templates);
 
 export default ElectricReadingProgress;

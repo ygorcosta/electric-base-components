@@ -2,10 +2,8 @@
 
 import Autocomplete from 'metal-autocomplete';
 import core from 'metal';
-import Soy from 'metal-soy';
 
 import ElectricSearchBase from './ElectricSearchBase';
-import templates from './ElectricSearchAutocomplete.soy';
 
 class ElectricSearchAutocomplete extends ElectricSearchBase {
 	attached() {
@@ -43,7 +41,5 @@ class ElectricSearchAutocomplete extends ElectricSearchBase {
 		};
 	}
 };
-
-Soy.register(ElectricSearchAutocomplete, templates);
 
 export default ElectricSearchAutocomplete;

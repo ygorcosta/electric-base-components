@@ -1,10 +1,8 @@
 'use strict';
 
 import core from 'metal';
-import Soy from 'metal-soy';
 
 import ElectricSearchBase from './ElectricSearchBase';
-import templates from './ElectricSearch.soy';
 
 class ElectricSearch extends ElectricSearchBase {
 	attached() {
@@ -30,7 +28,5 @@ ElectricSearch.STATE = {
 		value: Infinity
 	}
 };
-
-Soy.register(ElectricSearch, templates);
 
 export default ElectricSearch;
