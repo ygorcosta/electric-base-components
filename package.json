@@ -1,6 +1,6 @@
 {
-  "name": "electric-components",
-  "version": "1.0.10",
+  "name": "electric-base-components",
+  "version": "1.0.0",
   "description": "Components that are compatible with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wedeploy/electric-components"
+    "url": "https://github.com/wedeploy/electric-base-components"
   },
   "keywords": [
     "components",
@@ -22,7 +22,7 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wedeploy/electric-components/issues"
+    "url": "https://github.com/wedeploy/electric-base-components/issues"
   },
   "homepage": "http://electricjs.com",
   "dependencies": {
