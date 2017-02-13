@@ -42,6 +42,18 @@ class ElectricReadingProgress extends Component {
 			});
 		}
 	}
+
+	disposed() {
+		const {affix, progress} = this;
+
+		if (affix) {
+			affix.dispose();
+		}
+
+		if (progress) {
+			progress.dispose();
+		}
+	}
 };
 
 ElectricReadingProgress.STATE = {

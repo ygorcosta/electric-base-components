@@ -12,7 +12,7 @@ class ElectricSearchAutocomplete extends ElectricSearchBase {
 		const {input} = this.refs;
 
 		if (input) {
-			var autocomplete = new Autocomplete({
+			this.autocomplete = new Autocomplete({
 				data: this.search_.bind(this),
 				format: this.format_.bind(this),
 				inputElement: input,
@@ -39,6 +39,14 @@ class ElectricSearchAutocomplete extends ElectricSearchBase {
 			</a>`,
 			url: url
 		};
+	}
+
+	disposed() {
+		const {autocomplete} = this;
+
+		if (autocomplete) {
+			autocomplete.dispose();
+		}
 	}
 };
 
