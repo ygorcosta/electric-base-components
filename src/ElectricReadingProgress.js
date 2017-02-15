@@ -16,6 +16,7 @@ class ElectricReadingProgress extends Component {
 			articleContainer,
 			articleSelector,
 			element,
+			offsetBottom,
 			offsetTop,
 			titleSelector
 		} = this;
@@ -38,6 +39,7 @@ class ElectricReadingProgress extends Component {
 
 			this.affix = new metal.Affix({
 				element: element,
+				offsetBottom: offsetBottom,
 				offsetTop: offsetTop
 			});
 		}
@@ -66,6 +68,11 @@ ElectricReadingProgress.STATE = {
 		validator: core.isString,
 		value: 'article'
 	},
+
+	offsetBottom: {
+		validator: core.isNumber,
+		value: 200
+	},	
 
 	offsetTop: {
 		validator: core.isNumber,
