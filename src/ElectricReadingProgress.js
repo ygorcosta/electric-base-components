@@ -70,9 +70,8 @@ ElectricReadingProgress.STATE = {
 	},
 
 	offsetBottom: {
-		validator: core.isNumber,
-		value: 200
-	},	
+		validator: core.isNumber
+	},
 
 	offsetTop: {
 		validator: core.isNumber,
