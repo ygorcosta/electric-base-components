@@ -30,7 +30,7 @@ class ElectricSearchBase extends Component {
 	}
 
 	filterResults_(data, query) {
-		const {children} = data;
+		const {children, childIds} = data;
 
 		let results = [];
 
@@ -39,7 +39,9 @@ class ElectricSearchBase extends Component {
 		}
 
 		if (children) {
-			children.forEach(child => {
+			childIds.forEach(childId => {
+				const child = children[childId];
+
 				results = results.concat(this.filterResults_(child, query));
 			});
 		}
