@@ -15,6 +15,7 @@ class ElectricSearchAutocomplete extends ElectricSearchBase {
 
 		if (input) {
 			var autocomplete = new Autocomplete({
+				autoBestAlign: false,
 				data: this.search_.bind(this),
 				format: this.format_.bind(this),
 				inputElement: input,
