@@ -28,7 +28,7 @@ class ElectricReadingProgress extends Component {
 				return `#${article.id}`;
 			});
 
-			this.progress = Component.render(ReadingProgress, {
+			this.progress = new ReadingProgress({
 				items: articleIds,
 				titleSelector: titleSelector,
 				trackerConfig: {
@@ -37,7 +37,7 @@ class ElectricReadingProgress extends Component {
 				}
 			}, this.refs.readingContainer);
 
-			this.affix = Component.render(Affix, {
+			this.affix = new Affix({
 				element: element,
 				offsetBottom: offsetBottom,
 				offsetTop: offsetTop
