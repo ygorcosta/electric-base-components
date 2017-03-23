@@ -28,7 +28,7 @@ class ElectricReadingProgress extends Component {
 				return `#${article.id}`;
 			});
 
-			this.progress = new metal.ReadingProgress({
+			this.progress = Component.render(ReadingProgress, {
 				items: articleIds,
 				titleSelector: titleSelector,
 				trackerConfig: {
@@ -37,7 +37,7 @@ class ElectricReadingProgress extends Component {
 				}
 			}, this.refs.readingContainer);
 
-			this.affix = new metal.Affix({
+			this.affix = Component.render(Affix, {
 				element: element,
 				offsetBottom: offsetBottom,
 				offsetTop: offsetTop
