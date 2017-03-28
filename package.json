@@ -34,6 +34,7 @@
     "metal-autocomplete": "^2.1.0",
     "metal-clipboard": "^2.0.0",
     "metal-reading-progress": "^2.0.0",
+    "metal-tabs": "^2.3.0",
     "metal-toggler": "^2.0.0",
     "metal-tooltip": "^2.0.3"
   }
