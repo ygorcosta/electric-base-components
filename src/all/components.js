@@ -1,6 +1,7 @@
 'use strict';
 
 import ElectricCode from '../ElectricCode';
+import ElectricCodeTabs from '../ElectricCodeTabs';
 import ElectricNavigation from '../ElectricNavigation';
 import ElectricReadingProgress from '../ElectricReadingProgress';
 import ElectricSearch from '../ElectricSearch';
@@ -10,6 +11,7 @@ import ElectricUpdates from '../ElectricUpdates';
 
 export {
 	ElectricCode,
+	ElectricCodeTabs,
 	ElectricNavigation,
 	ElectricReadingProgress,
 	ElectricSearch,
