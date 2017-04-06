@@ -121,4 +121,6 @@ ElectricCodeTabs.STATE = {
   }
 };
 
+window.ElectricCodeTabs = ElectricCodeTabs;
+
 export default ElectricCodeTabs;
