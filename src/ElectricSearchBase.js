@@ -10,11 +10,17 @@ class ElectricSearchBase extends Component {
 		this.on('queryChanged', this.handleQueryChange_.bind(this));
 	}
 
+	matchesArrayField_(value, query) {
+		return value.some(itemName => {
+			return itemName.indexOf(query) > -1;
+		});
+	}
+
 	matchesQuery_(data, query) {
 		const {childrenOnly, excludePath} = this;
 		const path = this.path || location.pathname;
 
-		let {content, description, hidden, title, url} = data;
+		let {hidden, url} = data;
 
 		if ((childrenOnly && url.indexOf(path) !== 0 && url !== path) ||
 			(excludePath && url.indexOf(excludePath) === 0)) {
@@ -22,13 +28,36 @@ class ElectricSearchBase extends Component {
 			return false;
 		}
 
-		content = content ? content.toLowerCase() : '';
-		description = description ? description.toLowerCase() : '';
-		title = title ? title.toLowerCase() : '';
+		return !hidden && this.matchesField_(data, query);
+	}
 
-		return !hidden && (title.indexOf(query) > -1 ||
-			description.indexOf(query) > -1 ||
-			content.indexOf(query) > -1);
+	matchesField_(data, query) {
+		const {fieldNames} = this;
+
+		return fieldNames.some(fieldName => {
+			let value = data[fieldName];
+
+			let matches = false;
+
+			if (!value) {
+				return matches;
+			}
+
+			if (Array.isArray(value)) {
+				matches = this.matchesArrayField_(value, query);
+			}
+			else if (typeof value === 'string') {
+				matches = this.matchesTextField_(value, query);
+			}
+
+			return matches;
+		});
+	}
+
+	matchesTextField_(value, query) {
+		value = value.toLowerCase();
+
+		return value.indexOf(query) > -1;
 	}
 
 	filterResults_(data, query) {
@@ -109,6 +138,11 @@ ElectricSearchBase.STATE = {
 
 	excludePath: {
 		validator: core.isString
+	},
+
+	fieldNames: {
+		validator: core.isArray,
+		value: ['content', 'description', 'tags', 'title']
 	},
 
 	maxResults: {
