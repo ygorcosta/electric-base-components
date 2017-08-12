@@ -13,7 +13,8 @@ class ElectricCodeTabs extends State {
     super(opt);
 
     let tabGroupsData = [];
-    document.querySelectorAll('.' + this.className).forEach(element => {
+    let elements = Array.prototype.slice.call(document.querySelectorAll('.' + this.className));
+    elements.forEach(element => {
       tabGroupsData.push({
         label: this.getTabLabelFromElement_(element),
         element: element
