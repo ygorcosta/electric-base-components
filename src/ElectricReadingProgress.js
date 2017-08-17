@@ -8,9 +8,9 @@ import ReadingProgress from 'metal-reading-progress';
 
 class ElectricReadingProgress extends Component {
 	attached() {
-		window.load = () => {
+		window.addEventListener('load', () => {
 			this.renderReadingProgress_();
-		}
+		});
 	}
 
 	renderReadingProgress_() {
